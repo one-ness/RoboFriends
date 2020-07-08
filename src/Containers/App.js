@@ -23,7 +23,6 @@ class App extends Component {
 	}
 	render() {
 		const {robots, searchField} = this.state;
-		console.log
 		if(!robots.length) {
 			return <h1 className='f1 fw2 ma0'>Loading</h1>
 		} else {
