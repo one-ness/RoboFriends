@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CardList from '../Components/CardList';
 import Scroll from '../Components/Scroll';
 import SearchBox from '../Components/SearchBox';
+import ErrorBoundary from '../Components/ErrorBoundary';
 import '../Style/App.css';
 
 class App extends Component {
@@ -22,7 +23,6 @@ class App extends Component {
 	}
 	render() {
 		const {robots, searchField} = this.state;
-		console.log(robots);
 		if(!robots.length) {
 			return <h1 className='f1 fw2 ma0'>Loading</h1>
 		} else {
@@ -34,7 +34,9 @@ class App extends Component {
 						<SearchBox searchChange={this.onSearchChange}/>
 					</div>
 					<Scroll>
-						<CardList robots={filteredRobots}/>
+						<ErrorBoundary>
+							<CardList robots={filteredRobots}/>
+						</ErrorBoundary>
 					</Scroll>
 				</>
 			);

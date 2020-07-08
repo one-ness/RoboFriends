@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = ({robots}) => 
+const CardList = ({robots}) =>
 	robots.map(robot => 
 		<Card 
 			key={robot.id} 
