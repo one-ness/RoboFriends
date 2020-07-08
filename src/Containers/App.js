@@ -17,12 +17,13 @@ class App extends Component {
 		this.setState({searchField: event.target.value})
 	}
 	componentDidMount() {
-		fetch('http://jsonplaceholder.typicode.com/users')
+		fetch('https://jsonplaceholder.typicode.com/users')
 		.then(response => response.json())
 		.then(robots => this.setState({robots:robots}));
 	}
 	render() {
 		const {robots, searchField} = this.state;
+		console.log
 		if(!robots.length) {
 			return <h1 className='f1 fw2 ma0'>Loading</h1>
 		} else {
